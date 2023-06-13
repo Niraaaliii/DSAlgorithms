@@ -32,16 +32,19 @@ public class SelectionSort {
 		
 		for (int i = 0; i < array.length - 1; i++) {
 			
+			//assigning minimum to x
             int x = i;
             
             for (int j = i + 1; j < array.length; j++) {
             	
+            	//comparing i+1 with the minimum
                 if (array[j] < array[x]) {
                 	
                     x = j;
                 }
             }
             
+            //swapping them
             int temp = array[x];
             array[x] = array[i];
             array[i] = temp;
