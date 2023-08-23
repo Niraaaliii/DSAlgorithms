@@ -22,13 +22,13 @@ public class SelectionSort {
 		System.out.println(Arrays.toString(array));
 		input.close();
 
-		sortArray(array);
+		SelectionSorting(array);
 		System.out.println("Sorted Array:");
 		System.out.println(Arrays.toString(array));
 
 	}
 	
-	public static void sortArray(int[] array){
+	public static void SelectionSorting(int[] array){
 		
 		for (int i = 0; i < array.length - 1; i++) {
 			
