@@ -1,13 +1,24 @@
 package leetCode.LeetCode75;
 
+
 public class ReverseString {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+		System.out.println(reverseWords("Sky is  Blue"));
+			
 	}
 
-	 public String reverseWords(String s) {
-	       return null; 
-	    }
+	static String reverseWords(String s) {
+		   
+        String[] temp = s.trim().split("\\s+");
+        
+        String result = "";
+ 
+        for (int i = temp.length-1; i > 0; i--) {
+                result += temp[i] + " ";
+        }
+        
+        return result + temp[0];
+	}
 }
