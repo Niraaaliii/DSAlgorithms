@@ -23,6 +23,7 @@ public class LeftRotateArray {
 		for(int i = 0; i< len ; i++) {
 			arr[i] = tmp[i];
 		}
+		
 		for (int i = 0; i <= len - 1; i++) {
 			System.out.print(arr[i] + " ");
 		}
