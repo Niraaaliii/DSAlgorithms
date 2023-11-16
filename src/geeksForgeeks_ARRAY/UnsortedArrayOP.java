@@ -2,10 +2,10 @@ package geeksForgeeks_ARRAY;
 
 public class UnsortedArrayOP {
 
-	static void printElements(int[] arr) {
+	static void printElements(int[] arr, int len) {
 
-		for (int i : arr) {
-			System.out.print(i + " ");
+		for (int i = 0; i < len; i++) {
+			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
 	}
@@ -21,26 +21,26 @@ public class UnsortedArrayOP {
 		return -1;
 	}
 
-	static void deleteElement(int arr[],int len, int val) {
-		
-		int pos = findIndxofElement(arr, len, val);
-		
-		
-		
+	static void deleteElement(int arr[], int n, int key) {
+
+		int pos = findIndxofElement(arr, n, key);
+
+		if (pos == -1) {
+			System.out.println("Element not found");
+			return;
+		}
+
+		for (int i = pos; i < n - 1; i++)
+			arr[i] = arr[i + 1];
+
+		printElements(arr, n-1);
 	}
 
 	static void insertElement(int arr[], int len, int val, int pos) {
-
-		int tmp = arr[pos];
+		for (int i = len - 1; i >= pos; i--)
+			arr[i + 1] = arr[i];
 		arr[pos] = val;
-
-		for (int i = pos + 1; i < len; i++) {
-			arr[i] = tmp;
-			tmp = arr[i + 1];
-		}
-		
-		printElements(arr);
-
+		printElements(arr, len + 1);
 	}
 
 	public static void main(String args[]) {
@@ -53,11 +53,15 @@ public class UnsortedArrayOP {
 
 		int len = 5;
 		int val = 10;
-		int pos = 2;
+		int pos = 1;
 
-		printElements(arr);
-		
+		printElements(arr, len);
+
 		insertElement(arr, len, val, pos);
+		len += 1;
+		
+		val = 1;
+		deleteElement(arr, len, val);
 	}
 
 }
