@@ -11,6 +11,7 @@ public class convertToWave {
 				a[i+1] = tmp;
 			}
 		}
+		
     }
 	
 	public static void main(String[] args) {
