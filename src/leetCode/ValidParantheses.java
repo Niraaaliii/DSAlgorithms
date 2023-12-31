@@ -19,21 +19,51 @@ Input: s = "(]"
 Output: false
  */
 public class ValidParantheses {
+	
+	
 
 	static boolean isValid(String s) {
 		
-		Stack<String> parts = new Stack<>();
 		
-		for(char c : s.toCharArray()) {
-			
-		}
+//		Stack<Character> stk = new Stack<>();
+//
+//        for(char c : s.toCharArray()){
+//            switch(c)
+//            {
+//                case '{':
+//                	stk.push('}');
+//                    break;
+//                case '[':
+//                	stk.push(']');
+//                    break;
+//                case '(':
+//                    stk.push(')');
+//                    break;
+//                default: 
+//                	if( stk.isEmpty() || stk.pop() != c )
+//                	{
+//                		return false;
+//                	}
+//            }
+//        }
+//        return stk.isEmpty();
 		
-		return true;
+		 Stack<Character> stack = new Stack<Character>(); 
+	        for (char c : s.toCharArray()) { 
+	            if (c == '(') 
+	                stack.push(')'); 
+	            else if (c == '{') 
+	                stack.push('}'); 
+	            else if (c == '[') 
+	                stack.push(']'); 
+	            else if (stack.isEmpty() || stack.pop() != c) 
+	                return false;
+	        }
+	        return stack.isEmpty();
 	}
 
 	public static void main(String[] args) {
-		String a = "{}[]()";
-		isValid(a);
+		String a = "{()";
+		System.out.println(isValid(a));
 	}
-
 }
