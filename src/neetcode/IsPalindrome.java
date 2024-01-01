@@ -1,4 +1,4 @@
-package leetCode;
+package neetcode;
 
 //Example 1:
 //

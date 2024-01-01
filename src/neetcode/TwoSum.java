@@ -1,4 +1,4 @@
-package leetCode;
+package neetcode;
 import java.util.*;
 
 //Input: nums = [2,7,11,15], target = 9
