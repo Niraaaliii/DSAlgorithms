@@ -13,15 +13,15 @@ public class MissingNumber {
 
 	static int missingNumber(int[] nums) {
 
-		int len = nums.length;
-		HashSet<Integer> n = new HashSet<>();
+		int range = nums.length;
+		int expected_sum = (range * (range + 1) )/ 2;
+		int actual = 0;
 		
-		for (int i = 1; i <= nums.length; i++) {
-			n.add(i);
+		for(int i : nums) {
+			actual += i;
 		}
 		
-		///for(int )
-		return 0;
+		return expected_sum-actual;
 	}
 
 	public static void main(String[] args) {
