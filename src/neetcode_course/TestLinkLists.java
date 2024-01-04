@@ -3,24 +3,33 @@ package neetcode_course;
 public class TestLinkLists {
 
 	public static void main(String[] args) {
-		Singly_LinkList sList = new Singly_LinkList();
+		Singly_LinkList s = new Singly_LinkList();
+		
+		s.addNode(1);
+		s.addNode(2);
+		s.addNode(3);
+		s.addNode(5);
 
-		// Add nodes to the list
-		sList.addNode(1);
-		sList.addNode(2);
-		sList.addNode(3);
-		sList.addNode(4);
-
-		// Displays the nodes present in the list
+		s.inserAtEnd(6);
 //		sList.display();
 
-		sList.inserAtEnd(5);
-
+		s.insertAtHead(0);
 //		sList.display();
-
-		sList.insertAtHead(0);
-
-		sList.display();
+		
+		s.insertAfter(s.getNode(3), 4);
+		s.display();
+		
+		s.removeHead();
+		s.display();
+		
+		s.removeEnd();
+		s.display();
+		
+		s.removeNode(s.getNode(4));
+		s.display();
+		
+		s.insertAfter(s.getNode(3), 4);
+		s.display();
 	}
 
 }
