@@ -17,7 +17,6 @@ public class Singly_LinkList {
 	public Node head = null;
 	public Node tail = null;
 
-	// addNode() will add a new node to the list
 	public void addNode(int data) {
 		// Create a new node
 		Node newNode = new Node(data);
@@ -124,4 +123,28 @@ public class Singly_LinkList {
 		}
 		System.out.println();
 	}
+	
+	public int findCurLength() {
+		Node current = head;
+		int i = 0;
+		
+		if (head == null) {
+			System.out.println("List is empty");
+			return i;
+		}
+		while (current != null) {
+			i++;
+			current = current.next;
+		}
+		
+		return i;
+	}
+
+	public Node reverseLinkList(Node head) {
+		
+		
+		
+		return null;
+	}
+
 }
