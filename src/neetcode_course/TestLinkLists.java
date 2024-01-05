@@ -1,5 +1,9 @@
 package neetcode_course;
 
+import java.util.List;
+
+import neetcode_course.Singly_LinkList.Node;
+
 public class TestLinkLists {
 
 	public static void main(String[] args) {
@@ -30,6 +34,18 @@ public class TestLinkLists {
 		s.removeNode(s.getNode(4));
 		s.display();
 //		System.out.println("Current Length of LL is - "+s.findCurLength());
+//		List<Node> ln = s.reverseLinkList(s.head);
+//		
+//		for(Node n : ln) {
+//			System.out.print(n.data + " ");
+//		}
+		
+		Node n = s.reverse(s.head);
+		
+		while(n != null) {
+			System.out.print(n.data + " ");
+			n = n.next;
+		}
 	}
 
 	static void TestingDoubleLinkList() {

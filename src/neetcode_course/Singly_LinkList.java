@@ -1,5 +1,7 @@
 package neetcode_course;
 
+import java.util.*;
+
 public class Singly_LinkList {
 
 	// Represent a node of the singly linked list
@@ -74,29 +76,29 @@ public class Singly_LinkList {
 	public void removeHead() {
 		head = head.next;
 	}
-	
+
 	public void removeEnd() {
 		Node cur = head;
-		
-		while(cur.next.next != null) {
+
+		while (cur.next.next != null) {
 			cur = cur.next;
 		}
-		
+
 		cur.next = null;
 		tail = cur;
 	}
-	
+
 	public void removeNode(Node n) {
 		Node cur = head;
-		
-		while(cur.next != n) {
+
+		while (cur.next != n) {
 			cur = cur.next;
 		}
-		
+
 		cur.next = n.next;
-		
+
 	}
-	
+
 	public Node getNode(int val) {
 		Node current = head;
 		while (current != null) {
@@ -123,11 +125,11 @@ public class Singly_LinkList {
 		}
 		System.out.println();
 	}
-	
+
 	public int findCurLength() {
 		Node current = head;
 		int i = 0;
-		
+
 		if (head == null) {
 			System.out.println("List is empty");
 			return i;
@@ -136,15 +138,65 @@ public class Singly_LinkList {
 			i++;
 			current = current.next;
 		}
-		
+
 		return i;
 	}
 
-	public Node reverseLinkList(Node head) {
+//	public List<Node> reverseLinkList(Node head) {
+//
+//		Stack<Node> rev = new Stack<Node>();
+//		List<Node> revList = new ArrayList<Node>();
+//
+//		Node cur = head;
+//
+//		while (cur != null) {
+//			rev.push(cur);
+//			cur = cur.next;
+//		}
+//
+//		while (!rev.empty()) {
+//			revList.add(rev.pop());
+//		}
+//
+//		return revList;
+//	}
+
+	public Node reverse(Node head) {
+
+		/* Recursive Method T/S - O(n) */
+		// base case
+//		if (head == null || head.next == null)
+//			return head;
+//
+//		Node newHead = reverse(head.next);
+//
+//		head.next.next = head;
+//		head.next = null;
+//
+//		return newHead;
 		
 		
+		/* Iterative Method T-O(n) S-O(1) */
+		Node prev = null;
+		Node curr = head;
+		Node next;
 		
-		return null;
+		while(curr!=null) {
+			//assigning curr's next to next pointer
+			next = curr.next;
+			//Re-directing curr's next to previous pointer
+			curr.next = prev;
+			//now current node is previous node
+			prev = curr;
+			//and current node is next node
+			curr = next;
+		}
+		
+		//at last assigning head to last node
+		head = prev;
+		
+		return head;
+
 	}
 
 }
