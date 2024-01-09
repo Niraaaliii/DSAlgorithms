@@ -27,12 +27,12 @@ public class TestLinkLists {
 		//System.out.println("Current Length of LL is - "+s.findCurLength());
 		s.insertAfter(s.getNode(3), 4);
 		//System.out.println("Current Length of LL is - "+s.findCurLength());
-		s.removeHead();
+//		s.removeHead();
 		//System.out.println("Current Length of LL is - "+s.findCurLength());
-		s.removeEnd();
+//		s.removeEnd();
 		//System.out.println("Current Length of LL is - "+s.findCurLength());
-		s.removeNode(s.getNode(4));
-		s.display();
+//		s.removeNode(s.getNode(4));
+		//s.display();
 //		System.out.println("Current Length of LL is - "+s.findCurLength());
 //		List<Node> ln = s.reverseLinkList(s.head);
 //		
@@ -40,11 +40,19 @@ public class TestLinkLists {
 //			System.out.print(n.data + " ");
 //		}
 		
-		Node n = s.reverse(s.head);
+//		Node n = s.reverse(s.head);
+//		
+//		while(n != null) {
+//			System.out.print(n.data + " ");
+//			n = n.next;
+//		}
 		
-		while(n != null) {
-			System.out.print(n.data + " ");
-			n = n.next;
+		
+		Node n1 = s.mergeTwoLists(s.head,s.head);
+		
+		while(n1 != null) {
+			System.out.print(n1.data + " ");
+			n1 = n1.next;
 		}
 	}
 

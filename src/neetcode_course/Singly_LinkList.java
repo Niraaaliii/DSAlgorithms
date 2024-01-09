@@ -1,7 +1,5 @@
 package neetcode_course;
 
-import java.util.*;
-
 public class Singly_LinkList {
 
 	// Represent a node of the singly linked list
@@ -142,25 +140,6 @@ public class Singly_LinkList {
 		return i;
 	}
 
-//	public List<Node> reverseLinkList(Node head) {
-//
-//		Stack<Node> rev = new Stack<Node>();
-//		List<Node> revList = new ArrayList<Node>();
-//
-//		Node cur = head;
-//
-//		while (cur != null) {
-//			rev.push(cur);
-//			cur = cur.next;
-//		}
-//
-//		while (!rev.empty()) {
-//			revList.add(rev.pop());
-//		}
-//
-//		return revList;
-//	}
-
 	public Node reverse(Node head) {
 
 		/* Recursive Method T/S - O(n) */
@@ -174,29 +153,47 @@ public class Singly_LinkList {
 //		head.next = null;
 //
 //		return newHead;
-		
-		
+
 		/* Iterative Method T-O(n) S-O(1) */
 		Node prev = null;
 		Node curr = head;
 		Node next;
-		
-		while(curr!=null) {
-			//assigning curr's next to next pointer
+
+		while (curr != null) {
+			// assigning curr's next to next pointer
 			next = curr.next;
-			//Re-directing curr's next to previous pointer
+			// Re-directing curr's next to previous pointer
 			curr.next = prev;
-			//now current node is previous node
+			// now current node is previous node
 			prev = curr;
-			//and current node is next node
+			// and current node is next node
 			curr = next;
 		}
-		
-		//at last assigning head to last node
+
+		// at last assigning head to last node
 		head = prev;
-		
+
 		return head;
 
 	}
 
+	public Node mergeTwoLists(Node l1, Node l2) {
+
+		Node prehead = new Node(-1);
+		Node cur = prehead;
+
+		while (l1 != null && l2 != null) {
+			if (l1.data <= l2.data) {
+				cur.next = l1;
+				l1 = l1.next;
+			} else {
+				cur.next = l2;
+				l2 = l2.next;
+			}
+			cur = cur.next;
+		}
+
+		cur.next = l1 == null ? l2 : l1;
+		return prehead.next;
+	}
 }
