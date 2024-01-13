@@ -1,15 +1,13 @@
 package neetcode_course;
 
-import java.util.List;
-
 import neetcode_course.Singly_LinkList.Node;
 
 public class TestLinkLists {
 
 	public static void main(String[] args) {
 		
-		TestSingleLinkList();
-		//TestingDoubleLinkList();
+		//TestSingleLinkList();
+		TestingDoubleLinkList();
 	
 	}
 	
@@ -57,6 +55,16 @@ public class TestLinkLists {
 	}
 
 	static void TestingDoubleLinkList() {
-		
+		Double_LinkList dl = new Double_LinkList();
+		System.out.println("at index 1 : "+dl.Get(1)); 
+		dl.AddAtHead(5);
+		dl.display();
+		dl.AddAtHead(3);
+		dl.display();
+		System.out.println("at index 1  : " + dl.Get(1));
+		dl.AddAtTail(6);
+		dl.display();
+		dl.AddAtIndex(1, 4);
+		dl.display();
 	}
 }
